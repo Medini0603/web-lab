@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> body {
+        background-color: aqua;
+        font-family: cursive;
+    }
+
+    form {
+        margin: 100px 242px;
+        padding: 100px 174px;
+        background-color: aquamarine;
+    }
+
+    label {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    input {
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid;
+        border-radius: 4px
+    }
+
+    button {
+        margin: 32px 180px;
+        font-size: 13px;
+        padding: 20px;
+        font-family: cursive;
+        border: 3px solid black;
+        border-radius: 29px;
+
+    }
+
+    textarea {
+        margin: 100px;
+        padding: 100px;
+    }
+</style>
+</head>
+
+<body>
+    <form id="myform">
+        <label>Name:</label>
+        <input type="text" name="name">
+        <br>
+        <label>Email:</label>
+        <input type="email" name="email">
+        <br>
+        <label>Number:</label>
+        <input type="text" name="num">
+        <br>
+        <label>Gender:</label>
+        <select name="gender">
+            <option value="Choose" selected>Choose</option>
+            <option value="Female" selected>Female</option>
+            <option value="Male" selected>Male</option>
+            <option value="Other" selected>Other</option>
+        </select>
+        <br>
+        <label>Favourite color:</label>
+        <input type="text" name="col">
+        <br>
+
+        <button type="submit">SUBMIT</button>
+        <div id="result">
+            <textarea id="res" rows="10" cols="30" name="res"></textarea>
+        </div>
+    </form>
+
+
+    <script>
+        const elem=document.getElementById("myform");
+        const res=document.getElementById("res");
+        const regex=/^[A-Za-z]+$/;
+        elem.addEventListener("submit",function(event){
+            event.preventDefault();
+            let result="";
+        for(let i=0;i<elem.elements.length-1;i++){
+            if(elem[i].name=="name" ){
+                if(!regex.test(elem[i].value)){
+                    result="Enter a valid name";
+                }
+            }
+            if(elem[i].name=="col"){
+                if(!regex.test(elem[i].value)){
+                    result="Enter a valid color";
+                }
+            }
+
+            if(elem[i].name=="gender"){
+                if(elem[i].value=="Choose"){
+                    result="Choose a gender";
+                }
+            }
+            if(elem[i].name=="num"){
+                if(elem[i].value.length!=10){
+                    result="Enter a valid number";
+                }
+            }
+        }
+            if(result==""){
+                for(let i=0;i<elem.elements.length-1;i++){
+                    result+=elem[i].name;
+                    result+=":";
+                    result+=elem[i].value;
+                    result+="\n";
+                }
+            }
+
+            res.value=result;
+        })
+    </script>
+</body>
+
+</html>

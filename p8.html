@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+
+    <style>
+
+        body{
+            font-family: cursive;
+            background-color: aquamarine;
+        }
+        form{
+            margin: 100px 100px;
+    padding: 101px 173px;
+    background-color: aqua;
+}
+        
+label{
+    padding: 0 250px;
+}
+
+input{
+    padding: 0 250px;
+}
+
+button{
+    margin: 10px 260px;
+    padding: 15px;
+    background-color: aquamarine;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+    </style>
+</head>
+
+<body>
+    <div id="forms">
+        <form action="" id="myform">
+            <label>Register number : </label>
+            <br>
+            <input type="text" id="regno">
+            <br>
+            <label>Subject code : </label>
+            <br>
+            <input type="text" id="code">
+            <br>
+
+            <label>Marks1 : </label>
+            <br>
+            <input type="number" id="m1">
+            <br>
+            <label>Marks2 : </label>
+            <br>
+            <input type="number" id="m2">
+            <br>
+            <label>Marks3 : </label>
+            <br>
+            <input type="number" id="m3">
+            <br>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById("myform");
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            var reg, code, m1, m2, m3;
+            for (let i = 0; i < form.elements.length - 1; i++) {
+                if (form[i].id == "regno") { reg = form[i].value; }
+                if (form[i].id == "code") { code = form[i].value; }
+                if (form[i].id == "m1") { m1 = Number(form[i].value); }
+                if (form[i].id == "m2") { m2 = Number(form[i].value); }
+                if (form[i].id == "m3") { m3 = Number(form[i].value); }
+
+            }
+
+            var arr = [m1, m2, m3];
+            arr.sort(function(a,b){return a-b;});
+
+            avg = ((arr[2]) + (arr[1]) )/ 2;
+
+            alert("Average marks : "+avg);
+        })
+    </script>
+</body>
+
+</html>

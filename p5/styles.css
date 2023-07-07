@@ -1,0 +1,49 @@
+ul{
+    list-style: none;
+    margin: 0 32rem
+}
+li{
+    display: inline-block;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 1rem 1rem;
+    background-color: bisque;
+    border: 2px solid black;
+    padding: 10px 10px;
+    border-radius: 10px;
+}
+
+h1{
+    text-align: center;
+    text-decoration: underline;
+    font-family: cursive;
+}
+
+p{
+    text-align: center;
+    margin: 5px 30rem;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: aquamarine;
+    padding: 30px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+a:visited{
+    color: brown;
+}
+a:hover{
+    color: black;
+    font-weight: bolder;
+}
+li:hover{
+    background-color: rgb(202, 130, 130);
+    border-radius: 3px;
+}
+a:active{
+    color: blue;
+}

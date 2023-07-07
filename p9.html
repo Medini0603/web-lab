@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            background-color: aqua;
+            font-family: cursive;
+        }
+
+        form {
+            margin: 100px 242px;
+            padding: 100px 174px;
+            background-color: aquamarine;
+        }
+
+        label {
+            margin: 20px;
+            padding: 20px;
+        }
+
+        input {
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid;
+            border-radius: 4px
+        }
+
+        button {
+            margin: 32px 180px;
+            font-size: 13px;
+            padding: 20px;
+            font-family: cursive;
+            border: 3px solid black;
+            border-radius: 29px;
+
+        }
+
+        textarea {
+            margin: 100px;
+            padding: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" id="myform">
+
+        <label>User ID : </label>
+        <input type="text" name="id">
+        <br>
+        <label>Name : </label>
+        <input type="text" name="name">
+        <br>
+        <label>Password: </label>
+        <input type="password" name="pass">
+        <br>
+        <label>email : </label>
+        <input type="email" name="mail">
+        <br>
+
+        <button type="submit">SUBMIT</button>
+        <br>
+        <textarea id="res" cols="30" rows="10" placeholder="Your results appears here"></textarea>
+    </form>
+
+
+    <script>
+        const form = document.getElementById("myform");
+        const res = document.getElementById("res");
+        let result = "";
+        const regname = /^[a-zA-Z]+ [a-zA-Z]+$/;
+        const regpass = /^[a-zA-z\d!@#$%^&*]+$/;
+        const regmail = /^[a-zA-Z0-9.]+@[a-zA-Z]+\.[a-zA-Z]+$/
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();
+            for (let i = 0; i < form.elements.length - 1; i++) {
+
+                if (form[i].name == "id") {
+                    var len = form[i].value.length;
+                    if (len < 5 || len > 12) {
+                        alert("Enter valid username");
+                    }
+                    else {
+                        result += form[i].value;
+                        result += "\n";
+                    }
+                }
+
+                if (form[i].name == "name") {
+                    if (!regname.test(form[i].value)) {
+                        alert("Enter a valid name (first name and second name)");
+                    }
+                    else {
+                        result += form[i].value;
+                        result += "\n";
+                    }
+                }
+                if (form[i].name == "pass") {
+                    if (!regpass.test(form[i].value) || form[i].value.length < 8) {
+                        alert("Enter a valid Password (must be eight characters including one uppercase letter, one special character and alphanumeric characters");
+                    }
+                }
+
+                if (form[i].name == "mail") {
+                    var mailid = form[i].value;
+                    var atpos = mailid.indexOf(mailid);
+                    var dotpos = mailid.lastIndexOf(mailid);
+
+                    if (!regmail.test(form[i].value)) {
+                        alert("Enter valid mail id");
+                    }
+                    else {
+                        result += form[i].value;
+                        result += "\n";
+                    }
+                }
+
+            }
+
+            if (result != "") {
+                res.value = result;
+            }
+
+        })
+    </script>
+</body>
+
+</html>

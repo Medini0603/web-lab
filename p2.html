@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student feedback</title>
+    <style>
+        body {
+            background-color: rgb(249, 220, 166);
+        }
+
+        h1 {
+            text-align: center;
+            background-color: beige;
+            display: block;
+        }
+
+        #forms {
+            background-color: bisque;
+            margin: 0px 200px;
+            padding: auto;
+        }
+
+        form {
+            padding: 50px 200px;
+            margin: auto;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 20px;
+        }
+        input[type="submit"]{
+                font-size: 20px;
+               }
+
+               input[type="submit"]:hover{
+                cursor: pointer;
+               }
+    </style>
+</head>
+
+
+<body>
+
+    <h1>Student feedback form</h1>
+    <div id="forms">
+        <form action="">
+
+            <label for="name">Enter your name </label>
+            <br>
+            <input type="text" placeholder="name" name="name">
+            <br><br>
+            <label for="sem">Semester</label>
+            <br>
+            <input type="number" name="sem">
+            <br><br>
+            <label for="brnach">Choose branch</label>
+            <br>
+            <select name="branch" id="branch">
+                <option value="cs">Computer Science</option>
+                <option value="is">Information Science</option>
+                <option value="ec">Electrical Science</option>
+                <option value="me">Mechanical Engineering</option>
+            </select>
+            <br><br>
+            <label for="home">Are you a hostellite or locallite</label><br>
+            <input type="radio" name="h">Hostellite <br>
+            <input type="radio" name="l">Locallite <br><br>
+
+            <label for="pe">Choose your elective</label><br>
+            <input type="checkbox">Cloud computing <br>
+            <input type="checkbox">Cybersecuity <br>
+            <input type="checkbox">Automotive Cybersecurity <br>
+            <br>
+
+            <textarea name="feed" id="feed" cols="30" rows="10" placeholder="Enter your feedback here"></textarea>
+            <br><br>
+            <input type="submit">
+        </form>
+    </div>
+
+</body>
+
+</html>
