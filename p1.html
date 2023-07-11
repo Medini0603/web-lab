@@ -1,15 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timetable</title>
     <style>
-        body{
-            margin: -10px 10px;
-            background-color: burlywood;
+        #back {
+            /* background-image: url("jssstu.jpg"); */
+
+            /* Add the blur effect */
+            filter: blur(20px);
+            -webkit-filter: blur(30px);
+
+            /* Full height */
+            height: 100%;
+            width: 100%;
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
-        table,td,th{
+
+        #table {
+            color: black;
+            font-weight: bold;
+            border: 3px solid #f1f1f1;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        body {
+            margin: -10px 10px;
+        }
+
+        table,
+        td,
+        th {
             border: 1px solid black;
             border-collapse: collapse;
             text-align: center;
@@ -17,156 +47,164 @@
             padding: auto;
         }
 
-        th,td{
+        th,
+        td {
             padding: 15px 15px;
             font-size: 10px;
-            background-color: #e0c3c3;
+            /* background-color: #e0c3c3; */
         }
-        #center{
+
+        #center {
             margin: 0px;
             text-align: center;
             text-emphasis: bold;
             background-color: #e7bca7;
         }
+
         /* #l,#r{
             display: inline;
         } */
-        #r{
+        #r {
             text-align: right;
         }
-
     </style>
 </head>
+
 <body>
-    <div id="center">
-        <h2>JSS Science and Technology University Mysuru</h2>
-        <h4>Timetable</h4>
-    </div>
 
-    <div id="sub">
-        <p id="l">CSE A section </p>
-        <p id="r">Class : CS201</p>
-    </div>
+    <img id="back" src="jssstu.jpg" alt="">
+    <div id="table">
+        <div id="center">
+            <h2>JSS Science and Technology University Mysuru</h2>
+            <h4>Timetable</h4>
+        </div>
 
-    <div id="timetable">
-        <table >
+        <div id="sub">
+            <p id="l">CSE A section </p>
+            <p id="r">Class : CS201</p>
+        </div>
 
-            <tr>
-                <th>DAY</th>
-                <th>7.30-8.30</th>
-                <th>8.30-9.30</th>
-                <th>9.30-10.30</th>
-                <th>10.30-11.00</th>
-                <th>11.00-11.50</th>
-                <th>11.50-12.40</th>
-                <th>12.40-1.30</th>
-                <th>1.30-2.30</th>
-                <th>2.30-3.30</th>
-                <th>3.30-4.30</th>
-                <th>4.30-5.30</th>
-            </tr>
+        <div id="timetable">
+            <table>
 
-            <tr>
-                <td>Monday</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td rowspan="6">B <br> R <br> E <br> A <br> K</td>
-                <td>ML</td>
-                <td>Web</td>
-                <td>Iot</td>
+                <tr>
+                    <th>DAY</th>
+                    <th>7.30-8.30</th>
+                    <th>8.30-9.30</th>
+                    <th>9.30-10.30</th>
+                    <th>10.30-11.00</th>
+                    <th>11.00-11.50</th>
+                    <th>11.50-12.40</th>
+                    <th>12.40-1.30</th>
+                    <th>1.30-2.30</th>
+                    <th>2.30-3.30</th>
+                    <th>3.30-4.30</th>
+                    <th>4.30-5.30</th>
+                </tr>
 
-                <td rowspan="6">L <br> U <br> N <br> C <br> H</td>
-                <td colspan="3">LAB</td>
+                <tr>
+                    <td>Monday</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td rowspan="6">B <br> R <br> E <br> A <br> K</td>
+                    <td>ML</td>
+                    <td>Web</td>
+                    <td>Iot</td>
 
-            </tr>
-            <tr>
-                <td>Tuesday</td>
-                <td>-</td>
-                <td>-</td>
-                <td>OE</td>
-                <td>ML</td>
-                <td>Web</td>
-                <td>Iot</td>
-                <td colspan="3">LAB</td>
+                    <td rowspan="6">L <br> U <br> N <br> C <br> H</td>
+                    <td colspan="3">LAB</td>
 
-            </tr>
-            <tr>
-                <td>Wednesday</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>ML</td>
-                <td>Web</td>
-                <td>Iot</td>
-                <td>PE</td>
-                <td colspan="2">Lab</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>OE</td>
+                    <td>ML</td>
+                    <td>Web</td>
+                    <td>Iot</td>
+                    <td colspan="3">LAB</td>
 
-            </tr>
-            <tr>
-                <td>Thursday</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>ML</td>
-                <td>Web</td>
-                <td>Iot</td>
-                <td>PE</td>
-                <td colspan="2">LAB</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>ML</td>
+                    <td>Web</td>
+                    <td>Iot</td>
+                    <td>PE</td>
+                    <td colspan="2">Lab</td>
 
-            </tr>
-            <tr>
-                <td>Friday</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>ML</td>
-                <td>Web</td>
-                <td>Iot</td>
-                <td colspan="3"></td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>ML</td>
+                    <td>Web</td>
+                    <td>Iot</td>
+                    <td>PE</td>
+                    <td colspan="2">LAB</td>
 
-            </tr>
-            <tr>
-                <td>Saturday</td>
-                <td>-</td>
-                <td>-</td>
-                <td>-</td>
-                <td>ML</td>
-                <td>Web</td>
-                <td>Iot</td>
-                <td colspan="3"></td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>ML</td>
+                    <td>Web</td>
+                    <td>Iot</td>
+                    <td colspan="3"></td>
 
-            </tr>
-        </table>
-<br><br><br>
-        <table>
-            <tr>
-                <th>Code</th>
-                <th>Title</th>
-                <th>Credits</th>
-                <th>Instructor</th>
-            </tr>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>ML</td>
+                    <td>Web</td>
+                    <td>Iot</td>
+                    <td colspan="3"></td>
 
-            <tr>
-                <td>1</td>
-                <td>ML</td>
-                <td>4</td>
-                <td>maam</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>web</td>
-                <td>3</td>
-                <td>sir</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Iot</td>
-                <td>3</td>
-                <td>maam</td>
-            </tr>
-        </table>
+                </tr>
+            </table>
+            <br><br><br>
+            <table>
+                <tr>
+                    <th>Code</th>
+                    <th>Title</th>
+                    <th>Credits</th>
+                    <th>Instructor</th>
+                </tr>
 
+                <tr>
+                    <td>1</td>
+                    <td>ML</td>
+                    <td>4</td>
+                    <td>maam</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>web</td>
+                    <td>3</td>
+                    <td>sir</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Iot</td>
+                    <td>3</td>
+                    <td>maam</td>
+                </tr>
+            </table>
+
+        </div>
     </div>
 </body>
+
 </html>

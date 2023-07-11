@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-family: cursive;
         }
-
+        
         .full{
             max-width: max-content;
             max-height: max-content;
@@ -19,6 +20,7 @@
             grid-template-columns: 5fr 10fr;
             border: 1px solid rgb(6, 102, 147);
             border-radius: 10px;
+            margin:70px;
         }
 
         .left{
@@ -29,8 +31,47 @@
             background-color: aquamarine;
             padding:10px 10px;
         }
+        /* body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: azure;
+            font-family: cursive;
+        }
+
+        .full {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid black;
+            padding: 20px 20px;
+        } */
+
+        /* .left {
+            padding: 10px 10px;
+            background-color: aqua;
+        }
+
+        .right {
+            padding: 10px 10px;
+            background-color: aquamarine;
+        } */
+
+        li {
+            display: inline-block;
+            border: 1px solid black;
+            border-radius: 4px;
+            margin: 3px;
+            padding: 3px;
+        }
+
+        ul {
+            list-style-type: none;
+            /* max-width: 300px; */
+        }
     </style>
 </head>
+
 <body>
     <div class="full">
         <div class="left">
@@ -94,7 +135,8 @@
 
             <div class="para">
                 <p>
-                    To be skilled, talented and well versed in newer technologies, and lead the team with great leadership qualities
+                    To be skilled, talented and well versed in newer technologies, and lead the team with great
+                    leadership qualities
                 </p>
             </div>
 
@@ -114,11 +156,18 @@
             <div class="projects">
                 <h2>PROJECTS</h2>
                 <ul>
-                    <li><h4>Grocery shopping website</h4><p>using html,css,php</p></li>
-                    <li><h4>Personality prediction</h4><p>using kmeans</p></li>
+                    <li>
+                        <h4>Grocery shopping website</h4>
+                        <p>using html,css,php</p>
+                    </li>
+                    <li>
+                        <h4>Personality prediction</h4>
+                        <p>using kmeans</p>
+                    </li>
                 </ul>
             </div>
         </div>
     </div>
 </body>
+
 </html>

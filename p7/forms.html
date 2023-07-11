@@ -42,6 +42,9 @@
         margin: 100px;
         padding: 100px;
     }
+    #result{
+        display: none;
+    }
 </style>
 </head>
 
@@ -59,9 +62,9 @@
         <label>Gender:</label>
         <select name="gender">
             <option value="Choose" selected>Choose</option>
-            <option value="Female" selected>Female</option>
-            <option value="Male" selected>Male</option>
-            <option value="Other" selected>Other</option>
+            <option value="Female" >Female</option>
+            <option value="Male" >Male</option>
+            <option value="Other" >Other</option>
         </select>
         <br>
         <label>Favourite color:</label>
@@ -77,7 +80,8 @@
 
     <script>
         const elem=document.getElementById("myform");
-        const res=document.getElementById("res");
+        const res=document.getElementById("result");
+        const resu=document.getElementById("res");
         const regex=/^[A-Za-z]+$/;
         elem.addEventListener("submit",function(event){
             event.preventDefault();
@@ -106,15 +110,15 @@
             }
         }
             if(result==""){
-                for(let i=0;i<elem.elements.length-1;i++){
+                for(let i=0;i<elem.elements.length-2;i++){
                     result+=elem[i].name;
                     result+=":";
                     result+=elem[i].value;
                     result+="\n";
                 }
             }
-
-            res.value=result;
+            res.style.display="block";
+            resu.value=result;
         })
     </script>
 </body>
