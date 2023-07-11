@@ -64,8 +64,8 @@
 
         <button type="submit">SUBMIT</button>
         <br>
-        <textarea id="res" cols="30" rows="10" placeholder="Your results appears here"></textarea>
     </form>
+    <textarea id="res" cols="30" rows="10" placeholder="Your results appears here"></textarea>
 
 
     <script>
@@ -73,7 +73,7 @@
         const res = document.getElementById("res");
         let result = "";
         const regname = /^[a-zA-Z]+ [a-zA-Z]+$/;
-        const regpass = /^[a-zA-z\d!@#$%^&*]+$/;
+        const regpass = /^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[a-zA-Z\d!@#$%^&*]+$/;
         const regmail = /^[a-zA-Z0-9.]+@[a-zA-Z]+\.[a-zA-Z]+$/
         form.addEventListener("submit", function (event) {
             event.preventDefault();
@@ -107,8 +107,6 @@
 
                 if (form[i].name == "mail") {
                     var mailid = form[i].value;
-                    var atpos = mailid.indexOf(mailid);
-                    var dotpos = mailid.lastIndexOf(mailid);
 
                     if (!regmail.test(form[i].value)) {
                         alert("Enter valid mail id");
@@ -123,8 +121,8 @@
 
             if (result != "") {
                 res.value = result;
+                form.reset();
             }
-
         })
     </script>
 </body>
